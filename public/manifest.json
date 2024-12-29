@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/chrome-manifest",
+  "manifest_version": 3,
+  "name": "wallet-extension",
+  "description": "A simple wallet extension",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "extension_16.png",
+      "24": "extension_24.png",
+      "32": "extension_32.png"
+    }
+  },
+  "icons": {
+    "16": "extension_16.png",
+    "32": "extension_32.png",
+    "48": "extension_48.png",
+    "128": "extension_128.png",
+    "256": "extension_256.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["storage", "tabs", "activeTab", "scripting", "webRequest"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "devtools_page": "start-devtools.html"
+}
