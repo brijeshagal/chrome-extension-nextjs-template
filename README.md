@@ -20,7 +20,7 @@ npm install
 npm run build
 ```
 
-Load the `out` directory into the wallet extension. 
+Load the `out` directory into the chrome extension. 
 
 ### Congratulations 🎉 🎊
 
